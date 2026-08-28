@@ -32,7 +32,7 @@
 
     <main>
         <!-- Hero Banner Principal -->
-        <section class="hero-banner">
+        <section class="hero-banner" id="inicio">
             <div class="image-placeholder main-banner">
                 <!-- Ícone de imagem -->
                 <span>imagem/carrosel</span>
@@ -64,22 +64,26 @@
 
             <div class="carousel-container">
                 <!-- Imagem -->
-                <div class="image-placeholder carousel-image">
-                    <span>imagem</span>
+                <div class="carousel-image-wrapper">
+                    <button class="carousel-arrow prev" aria-label="Sinal anterior">&#8249;</button>
+                    <div class="image-placeholder carousel-image">
+                        <span>imagem</span>
+                    </div>
+                    <button class="carousel-arrow next" aria-label="Próximo sinal">&#8250;</button>
                 </div>
 
                 <!-- Texto abaixo da imagem (dentro do fundo branco) -->
                 <div class="carousel-caption">
-                    <h3>Queda Excessiva</h3>
-                    <p>Perda acima do normal, especialmente ao pentear ou lavar.</p>
+                    <h3 class="carousel-title">Queda Excessiva</h3>
+                    <p class="carousel-text">Perda acima do normal, especialmente ao pentear ou lavar.</p>
                 </div>
             </div>
 
             <!-- Bolinhas indicadoras fora do cartão branco -->
             <div class="carousel-dots">
-                <span class="dot active"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
+                <span class="dot active" data-slide="0"></span>
+                <span class="dot" data-slide="1"></span>
+                <span class="dot" data-slide="2"></span>
             </div>
         </section>
 
@@ -89,24 +93,49 @@
             <h2 class="section-title">Perguntas Frequentes</h2>
             <div class="faq-list">
                 <div class="faq-item">
-                    <span>Pergunta Frequente 01</span>
-                    <span class="icon">&#118</span>
+                    <div class="faq-question">
+                        <span>[ Pergunta Frequente Placeholder 01 ]</span>
+                        <span class="icon">&#8250;</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>[ Resposta Placeholder 01: descrição objetiva de como funciona o Ciclo 122 Dias para esse tópico. ]</p>
+                    </div>
                 </div>
                 <div class="faq-item">
-                    <span>Pergunta Frequente 02</span>
-                    <span class="icon">&#118</span>
+                    <div class="faq-question">
+                        <span>[ Pergunta Frequente Placeholder 02 ]</span>
+                        <span class="icon">&#8250;</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>[ Resposta Placeholder 02. ]</p>
+                    </div>
                 </div>
                 <div class="faq-item">
-                    <span>Pergunta Frequente 03</span>
-                    <span class="icon">&#118</span>
+                    <div class="faq-question">
+                        <span>[ Pergunta Frequente Placeholder 03 ]</span>
+                        <span class="icon">&#8250;</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>[ Resposta Placeholder 03. ]</p>
+                    </div>
                 </div>
                 <div class="faq-item">
-                    <span>Pergunta Frequente 04</span>
-                    <span class="icon">&#118</span>
+                    <div class="faq-question">
+                        <span>[ Pergunta Frequente Placeholder 04 ]</span>
+                        <span class="icon">&#8250;</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>[ Resposta Placeholder 04. ]</p>
+                    </div>
                 </div>
                 <div class="faq-item">
-                    <span>Pergunta Frequente 05</span>
-                    <span class="icon">&#118</span>
+                    <div class="faq-question">
+                        <span>[ Pergunta Frequente Placeholder 05 ]</span>
+                        <span class="icon">&#8250;</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>[ Resposta Placeholder 05. ]</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -441,6 +470,7 @@
             </div>
         </footer>
 
+    <script src="script.js"></script>
 </body>
 
 </html>
