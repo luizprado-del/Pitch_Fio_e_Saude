@@ -1,0 +1,672 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Roboto:wght@300;400;500;700&display=swap');
+
+:root {
+  --dark-green: #20291F;
+  --cream: #F1ECDF;
+  --rust: #A34632;
+  --muted-green: #7C8965;
+  --yellow: #C79A2E;
+  --white: #FFFFFF;
+  --gray-light: #E0E0E0;
+  
+  --font-heading: 'Roboto', serif;
+  --font-body: 'Roboto', sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background-color: var(--cream);
+  color: var(--dark-green);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+.two-col {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  align-items: center;
+}
+
+.two-col > * { flex: 1; min-width: 300px; }
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.center-text { text-align: center; }
+
+.dark-bg {
+  background-color: var(--dark-green);
+  color: var(--cream);
+}
+
+.subtitle {
+  display: block;
+  color: var(--rust);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+.subtitle.gold-text { color: var(--yellow); }
+
+.section-title {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  color: var(--dark-green);
+  margin-bottom: 2rem;
+}
+.dark-bg .section-title { color: var(--cream); }
+.section-title.gold-text { color: var(--yellow); }
+
+.btn {
+  display: inline-block;
+  padding: 1rem 2rem;
+  font-family: var(--font-body);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.primary-btn {
+  background-color: var(--rust);
+  color: var(--white);
+}
+.primary-btn:hover { background-color: #8A3B2A; }
+.full-width { width: 100%; }
+
+/* --- Placeholder Styles --- */
+.image-placeholder {
+  background-color: rgba(0,0,0,0.05);
+  border: 1px dashed rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: #999;
+  border-radius: 8px;
+}
+.text-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+.text-lines .line {
+  height: 12px;
+  background-color: rgba(0,0,0,0.1);
+  border-radius: 6px;
+  width: 100%;
+}
+.text-lines .line.short { width: 60%; }
+.center-lines { align-items: center; }
+.light-lines .line { background-color: rgba(255,255,255,0.2); }
+
+/* --- Header --- */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 4rem;
+  background-color: #F1ECDF;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.logo {
+  display: flex;
+  align-items: center; /* Alinha a imagem e o bloco de texto ao centro verticalmente */
+  gap: 1rem; /* Espaço entre a logo e o texto */
+}
+
+.logo img { 
+  height: 50px; 
+  display: block; 
+}
+
+/* Container do texto */
+.logo-text {
+  display: flex;
+  flex-direction: column; /* Coloca o subtítulo embaixo do nome */
+  justify-content: center;
+}
+
+.brand-name {
+  font-family: 'Fraunces', serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 1.1; /* Deixa o texto mais juntinho */
+  color: var(--dark-green);
+}
+
+.brand-name span { 
+  color: var(--rust); 
+}
+
+.logo-text p { 
+  font-size: 0.65rem; 
+  color: var(--muted-green); 
+  margin: 0; 
+  font-family: var(--font-body);
+  letter-spacing: 2px; /* Espaçamento entre letras para dar um ar sofisticado */
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+/* O resto do menu continua igual */
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+.nav-links a {
+  text-decoration: none;
+  color: var(--dark-green);
+  font-weight: 500;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.nav-links a:hover { color: var(--rust); }
+
+/* --- Hero Banner --- */
+.main-banner { height: 60vh; border-radius: 0; background-color: #fff; border: none; border-bottom: 1px solid var(--gray-light);}
+
+/* --- Slogan Section --- */
+.slogan-section { padding-top: 5rem; padding-bottom: 5rem; }
+.main-title {
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  line-height: 1.2;
+  color: var(--dark-green);
+  margin-bottom: 1.5rem;
+}
+.slogan-image .image-placeholder { height: 400px; background-color: #ffffff; }
+
+/* --- Carousel / Identificacao --- */
+.carousel-container {
+  display: flex;
+  flex-direction: column; /* Faz o texto ficar debaixo da imagem */
+  align-items: stretch; /* Faz a imagem ocupar toda a largura interna */
+  
+  /* Configuração do "Cartão Branco" */
+  background-color: #FFFFFF;
+  padding: 0.8rem; /* A borda branca ao redor de tudo */
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  
+  max-width: 900px;
+  margin: 2rem auto 1rem auto; /* Centralizado, com margem menor embaixo para as bolinhas */
+}
+
+.carousel-image {
+  width: 100%;
+  height: 350px;
+  background-color: #e2e2e2;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* Impede que imagens reais saiam para fora dos cantos arredondados */
+}
+
+/* Quando você for inserir a imagem real com a tag <img> */
+.carousel-image img { 
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover; 
+}
+
+/* --- Área de Texto dentro do cartão --- */
+.carousel-caption {
+  text-align: left; /* Alinha o título e texto à esquerda */
+  padding: 1rem 0.5rem 0.5rem 0.5rem; /* Espaçamento entre a imagem e o final do cartão */
+}
+
+.carousel-caption h3 {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  color: var(--dark-green);
+  margin-bottom: 0.5rem;
+}
+
+.carousel-caption p {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: #444; /* Um cinza escuro para facilitar a leitura */
+  line-height: 1.5;
+}
+
+/* --- Bolinhas --- */
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem; 
+}
+
+.dot {
+  width: 15px;
+  height: 5px;
+  border-radius: 4px; /* 4px cria um formato de pílula perfeito para bolinhas esticadas */
+  background-color: var(--gray-light);
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.dot.active { 
+  background-color: var(--rust); 
+}
+
+/* --- FAQ --- */
+.faq-list {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; /* Cria o espaço entre cada card de pergunta */
+}
+
+.faq-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Centraliza o texto e o ícone verticalmente */
+  padding: 1.2rem 1.5rem; /* Preenchimento em todos os lados do card */
+  
+  /* Configuração da borda e fundo */
+  border: 1px solid grey; /* Borda em todo o contorno */
+  border-radius: 8px; /* Cantos arredondados do card */
+  background-color: transparent; /* Mantém a cor de fundo da seção */
+  
+  color: var(--dark-green);
+  font-weight: 500;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.faq-item:hover {
+  border-color: var(--rust); /* Muda a cor da borda ao passar o mouse */
+  background-color: rgba(255, 255, 255, 0.4); /* Fica levemente mais claro no hover */
+}
+
+.faq-item .icon { 
+  color: var(--muted-green); 
+  font-weight:normal; 
+  font-size: 1rem;
+}
+
+.faq-item:hover .icon {
+  color: var(--rust); /* O ícone também acompanha a cor do hover */
+}
+/* --- Metodo --- */
+.metodo-content .subtitle,
+.metodo-content .section-title { text-align: center; }
+.metodo-section { padding: 5rem 0; }
+.video-placeholder { height: 350px; background-color: rgba(255, 255, 255, 0.5); border-color: rgba(255,255,255,0.1); }
+.metodo-item { margin-top: 2rem; }
+.metodo-item h3 {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+/* --- Cards Generics --- */
+.card {
+  background-color: var(--white);
+  padding: 1rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  text-align: left;
+  
+  width: 100%; /* O card tenta ocupar o espaço disponível... */
+  max-width: 320px; /* ...mas para de crescer ao atingir ...px */
+  margin: 0 auto; /* (Opcional) Centraliza o card caso sobre espaço na tela */
+}
+
+/* --- Beneficios --- */
+.beneficio-card .card-icon {
+  /*color: var(--muted-green);*/
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.beneficio-card h3 {
+  font-family: var(--font-heading);
+  margin-bottom: 1rem;
+}
+
+/* --- Crencas --- */
+.crenca-card { 
+  padding: 1rem; /* Ajusta o espaçamento interno para dar respiro */
+}
+
+/* Rótulos pequenos (Tags) */
+.tag-crenca {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+}
+
+.tag-mito {
+  color: var(--rust); 
+}
+
+/* Título principal do Mito */
+.mito-title {
+  color: var(--dark-green);
+  font-size: 1.2rem;
+  font-family: var(--font-body); /* Usando a fonte limpa em vez da serifada */
+  margin-bottom: 1.5rem;
+}
+
+/* Linha tracejada separadora */
+.dashed-divider {
+  border: none;
+  border-top: 1.5px dashed var(--gray-light);
+  margin: 1.5rem 0;
+}
+
+/* Cor verde do texto de realidade científica */
+.tag-realidade {
+  /* Usando um verde similar ao da imagem_2baedf.png. 
+     Se preferir usar o da paleta principal, troque por var(--muted-green) */
+  color: #1a8f71; 
+}
+
+/* --- CTA Banner --- */
+.cta-banner { padding: 4rem 2rem; }
+.cta-text { font-size: 1.5rem; font-family: var(--font-heading); margin-bottom: 2rem; }
+
+/* --- Mentora --- */
+.align-center { 
+  align-items: center; 
+}
+
+.mentora-imagem {
+  display: flex;
+  justify-content: center;
+}
+
+/* O círculo com borda tracejada */
+.circle-placeholder { 
+  width: 350px; 
+  height: 350px; 
+  border-radius: 50%; 
+  margin: 0 auto;
+  background-color: #F4F5F7; /* Cor de fundo levemente cinza/azulada */
+  border: 1px dashed #BCC1CA; /* Borda tracejada */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Alinhamento do ícone e texto dentro do círculo */
+.placeholder-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  color: #88909D;
+}
+
+.placeholder-content span {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* Ajustes de tipografia da Mentora */
+.mentora-title {
+  margin-bottom: 0.3rem; /* Aproxima o título do texto do CRM */
+  line-height: 1.2;
+}
+
+.crm-text {
+  font-family: var(--font-body);
+  color: #7A808A; /* Cinza médio igual ao da imagem */
+  font-size: 1.1rem;
+  font-weight: 400;
+  margin-bottom: 1.5rem; /* Espaço antes das linhas de texto */
+}
+
+/* Ajuste das linhas falsas para simular parágrafos */
+.paragraph-lines {
+  gap: 0.6rem;
+}
+
+.paragraph-break {
+  margin-top: 1rem; /* Cria o espaço em branco entre os blocos de linha */
+}
+
+.left-align { 
+  text-align: left; 
+}
+
+/* --- Depoimentos --- */
+.depoimento-card { 
+  border: 1px solid var(--muted-green); /* Borda ferrugem completa igual à imagem */
+  padding: 1.5rem;
+}
+
+.depoimento-header { 
+  display: flex; 
+  align-items: center; 
+  gap: 1rem; 
+  margin-bottom: 0.5rem; 
+}
+
+/* O círculo pontilhado do avatar */
+.avatar-placeholder { 
+  width: 55px; 
+  height: 55px; 
+  border-radius: 50%; 
+  background-color: #F4F5F7; 
+  border: 1px dashed #BCC1CA; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  color: #88909D; /* Cor do ícone SVG */
+}
+
+/* Informações da cliente */
+.nome-cliente {
+  display: flex;
+  flex-direction: column;
+}
+
+.nome-cliente h4 { 
+  font-family: var(--font-body); /* Fonte sem serifa igual à imagem */
+  color: var(--dark-green); 
+  font-size: 1.1rem;
+  margin-bottom: 0.1rem; 
+}
+
+.grau-tratado {
+  color: #7A808A; /* Cor cinza sutil */
+  font-size: 0.85rem;
+}
+
+/* Texto do depoimento */
+.depoimento-texto {
+  font-family: var(--font-body);
+  color: #444;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+/* --- Contato Form --- */
+.form-card { 
+  max-width: 600px; 
+  margin: 0 auto; 
+  background-color: #F8F9FA; /* Fundo cinza bem clarinho/quase branco do card */
+  padding: 2.5rem; 
+  border-radius: 12px; 
+  border: 1px solid #cfcfcf; /* Borda externa bem suave */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.03); 
+  text-align: left;
+}
+
+.form-group { 
+  margin-bottom: 1.5rem; 
+}
+
+.form-group label { 
+  display: block; 
+  margin-bottom: 0.5rem; 
+  font-weight: 700; /* Texto do label mais forte (negrito) */
+  font-size: 0.95rem; 
+  color: var(--dark-green);
+}
+
+.form-group input, 
+.form-group textarea {
+  width: 100%; 
+  padding: 0.8rem 1rem; 
+  border: 1px solid #D1D5DB; /* Borda cinza dos campos */
+  border-radius: 6px; /* Cantos levemente arredondados */
+  font-family: var(--font-body); 
+  background-color: #FFFFFF; /* Fundo branco nos campos */
+  color: #333;
+  font-size: 0.95rem;
+}
+
+.form-group textarea { 
+  resize: vertical; 
+  min-height: 100px; 
+}
+
+.form-group input:focus, 
+.form-group textarea:focus { 
+  outline: none; 
+  border-color: var(--rust); /* Destaque na cor da marca ao clicar */
+}
+
+/* Cor do texto de placeholder (dentro dos colchetes) */
+.form-group input::placeholder, 
+.form-group textarea::placeholder {
+  color: #9CA3AF; 
+}
+
+/* Ajuste específico para o botão do formulário */
+.form-btn {
+  margin-top: 1rem;
+  border-radius: 6px; /* Mesma curvatura dos inputs */
+  font-size: 1rem;
+}
+
+/* --- Footer --- */
+.footer { 
+  background-color: var(--dark-green);
+  padding: 4rem 2rem 2rem 2rem; 
+  color: var(--cream);
+  /* border-top: 5px solid var(--rust); Remova ou comente esta linha se não quiser a borda ferrugem em cima */
+}
+
+/* Container superior com 3 colunas */
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.footer-col {
+  flex: 1;
+  min-width: 250px;
+}
+
+/* Identidade Visual (Logo e Nome) */
+.footer-brand-header .brand-name {
+  font-family: 'Fraunces', serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 1.1; /* Deixa o texto mais juntinho */
+  color: var(--cream);
+}
+
+/* Textos gerais do footer e subtítulos */
+.footer-heading {
+  font-size: 1rem;
+  color: var(--white);
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+/*.footer-text {
+  font-size: 0.85rem;
+  color: #BCC1CA; /* Cinza claro para leitura confortável
+  line-height: 1.6;
+}*/
+
+/* Layout do Endereço */
+.address-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+}
+
+.pin-icon {
+  flex-shrink: 0; /* Impede o ícone de amassar */
+  margin-top: 0.2rem;
+}
+
+/* Links de Contato */
+.footer-links { 
+  display: flex; 
+  flex-direction: column; 
+  gap: 1rem; 
+}
+
+.footer-links a { 
+  color: #BCC1CA; 
+  text-decoration: none; 
+  font-size: 0.85rem; 
+  transition: color 0.2s;
+}
+
+.footer-links a:hover { 
+  color: var(--white); 
+}
+
+/* Divisória e Copyright */
+.footer-divider {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin: 0 0 1.5rem 0;
+}
+
+.footer-bottom {
+  text-align: center;
+}
+
+.footer-bottom p {
+  font-size: 0.75rem;
+  color: #88909D; /* Cinza mais apagado para não roubar a atenção */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .header { flex-direction: column; gap: 1rem; padding: 1.5rem; }
+  .main-title { font-size: 2rem; }
+  .section-title { font-size: 2rem; }
+  .footer-content { flex-direction: column; align-items: center; text-align: center; }
+}
